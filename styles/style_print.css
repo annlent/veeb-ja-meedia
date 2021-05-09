@@ -1,0 +1,15 @@
+body {
+    margin: 2.5cm;
+    font-size:  12pt;
+
+}
+
+nav, audio, video, iframe, #animation, #graphics {
+    /* selleks, et seda menüüd mitte printida, ei kasuta seda ruumi. Display:non tähendab, et printimisel see osa unustatakse */
+    display: none;
+
+}
+
+.photoplace {
+    display: none;
+}

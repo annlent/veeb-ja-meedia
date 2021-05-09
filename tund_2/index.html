@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+	<title>Veeb- ja meediaelemendid</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css"></link>
+</head>
+<body>
+	<nav>
+		<p><a href="https://www.tlu.ee">Tallinna Ülikool</a></p>
+		<p><a href="#wwwintro">Veebis saab kasutada</a></p>
+        <p><a href="#gaudeamus">Üliõpilashümn <q>Gaudeamus</q></a></p>
+        <p><a href="#media">Meediaelemendid veebis</a></p>
+        <!-- <q> on quote - tsitaadi element -->
+	</nav>
+	<main>
+		<header>
+			<h1>Veeb- ja meediaelemendid</h1>
+			<p>See veebileht on loodud õppetöö raames ja ei sisalda olulist või mõttekat sisu!</p>
+		</header>
+
+		<section id="wwwintro">
+			<h2>Veebis saab kasutada</h2>
+			<ol>
+				<li>Teksti
+					<ul>
+						<li>Pealkirju</li>
+						<li>Tavateksti</li>
+						<li>Loendeid (listid)</li>
+					</ul>
+				</li>
+            
+				<li>Graafikat</li>
+				<li>Meediat</li>
+			</ol>
+            <h3>Mõned mõisted</h3>
+            <dl>
+                <dt>List</dt>
+                <dd>Loend, loendina järjestatud andmete kogum</dd>
+                <dt>Tekst</dt><dd>Kirjutatud v trükitud sõnades mõtestatud järjend</dd>
+            </dl>
+            <br>
+            <br>
+            <br>
+		</section>
+        <section id="gaudeamus">
+            <h2>Gaudeamus</h2>
+            <p>keskaegne tekst, Christian Wilhelm Kindleben (töötlus) / üliõpilaslaul</p>
+            <pre>
+                :,: Gaudeamus igitur
+                juvenes dum sumus! :,:
+                Post jucundam juventutem,
+                post molestam senectutem
+                :,: nos habebit humus! :,:
+                
+                :,: Ubi sunt, qui ante nos
+                in mundo fuere? :,:
+                Vadite ad superos,
+                transite ad inferos,
+                :,: ubi iam fuere. :,:
+                
+                :,: Vita nostra brevis est,
+                brevi finietur. :,:
+                Venit mors velociter,
+                rapit nos atrociter,
+                :,: nemini parcetur. :,:
+                
+                :,: Vivat academia,
+                vivant professores! :,:
+                Vivat membrum quodlibet,
+                vivant membra quaelibet,
+                :,: semper sint in flore! :,:
+                
+                :,: Vivant omnes virgines
+                faciles, formosae! :,:
+                Vivant et mulieres
+                tenerae, amabiles,
+                :,: atque laboriosae! :,:
+                
+                :,: Vivat et respublica
+                et qui illam regit! :,:
+                Vivat nostra civitas,
+                maecenatum caritas,
+                :,: quae nos hic protegit! :,:
+                
+                :,: Pereat tristitia,
+                pereant osores! :,:
+                Pereat diabolus,
+                quivis antiburschius,
+                :,: atque irrisores! :,:
+            </pre>
+                <!-- pre formatted - säilitatakse sama vorming, CSS võimaldab ja fonti muuta ja kui muud üle ei jää, teeme span'i millele lisame vormingu -->
+
+
+        </section>
+<!-- pildikesed -->
+<section id="media">
+    <h2>Meediaelemendid veebilehel</h2>
+    <p>Veebilehel saab kasutada peaaegu kõiki meediaelemente nõnda nagu töölauarakendustest</p>
+    <h3>Pildid</h3>
+    <p>Kui pilt on lihtsalt kujunduse osa (nt bänner jmt)</p>
+    <img src="http://greeny.cs.tlu.ee/~rinde/media/photos/TLU_600x400/tlu_42.jpg " alt="Astra maja vaade">
+    <!-- src näitab asukohta, alt selgitav tekst pildifaili kohta (kui pilti ei saa näha, siis on teada millest ilma jäi).Ilma nendeta ei ole võimalik pilti kuvada -->
+    <!-- http://greeny.cs.tlu.ee/~rinde/media/photos/TLU_600x400/tlu_42.jpg  -->
+    <img src="http://greeny.cs.tlu.ee/~rinde/media/photos/TLU_600x400/tlu_41.jpg " alt="Tramm maja ees">
+    <p>Kui pilt on tähenduslik, st sisuga seotud (joonis, diagramm jmt), siis kasutame nõnda</p>
+    <figure>
+        <img src="http://greeny.cs.tlu.ee/~rinde/media/photos/TLU_600x400/tlu_37.jpg " alt="Astra õppehoone">
+            <figcaption>TLÜ Astra õppehoone</figcaption>    
+    </figure>
+    <!-- iga joonis <figure> on ise blokielement - ei kohandu vaatega -->
+    <figure>
+        <img src="http://greeny.cs.tlu.ee/~rinde/media/photos/TLU_600x400/tlu_36.jpg " alt="Terra õppehoone">
+        <figcaption>TLÜ Terra õppehoone</figcaption>    
+    </figure>
+    <br>
+    <br>
+    <br>
+    </section>
+
+<!-- Helide lisamine veebi -->
+
+<section>
+
+<h3> Heli </h3>
+    <p>HTML5 võimaldab veebilehel loomuliku (native) elemendina kasutada wav, mp3, ogg ja m4a faile.</p>
+    <audio controls preload="none">
+        <!-- võimalik lisada ka nt <audio controls autoplay siis läheks heli kohe mängima. Ei soovitata panna sellist asja. Brauserid ei toeta ka -->
+        <!-- <audio controls loop> võib olla tüütu, aga jääb kordama lõptutult. Lisaks on ka veel <audio controls preload = "auto"> ning selle tõttu, kui leht on laetud, siis hakatakse alla laadima heliklippi, et kasutaja saaks vajadusel kohe seda kuulata -->
+        <source src=http://greeny.cs.tlu.ee/~rinde/media/sounds/Thomas_Edison_Mary_had_lamb.ogg type="audio/ogg">
+    </audio>
+
+    <h3>Video</h3>
+    <p>HTML5 võimaldab veebilehel loomuliku elemendina kasutada mp4, ogv ja WebM failiformaate</p>
+    <video controls preload="none" width="600" poster="http://greeny.cs.tlu.ee/~rinde/media/videos/tlu_annab_hariduse.jpg">
+        <source src="http://greeny.cs.tlu.ee/~rinde/media/videos/haridusvalgustab.mp4" type="video/mp4">
+        Vabandame, teie brauser ei toeta HTML5 video elementi!
+    </video>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</section>
+
+<section>
+    <h3>Youtube video</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ehClk9_8TBI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- iframe eesmärk on näidata osaliselt teise veebilehe sisu -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</section>
+
+<section>
+<h3>Hobi: golf</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hZ841zuWIg8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</section>
+<footer>
+Annika (c) 	
+</footer>
+	</main>
+</body>
+</html>

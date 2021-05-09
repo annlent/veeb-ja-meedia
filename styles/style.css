@@ -1,0 +1,304 @@
+body {
+    background-color: #f8fcbf;
+    color: #213d01;
+    font-family:Arial, Helvetica, sans-serif;
+    background-image: url("../Photos/teemant.png");
+    background-repeat: no-repeat;
+    background-position: 1650px 300px;
+    background-attachment: fixed;
+    /* kui on soov, et see jääks lehel ühele kohale, siis tuleks kasutada background-attachment: fixed ; */
+}
+
+h1, h2, h3 {
+    color: rgb(10, 22, 0);
+}
+
+main, nav {
+    margin: 10px;
+    
+}
+
+section, nav {
+    background-color: rgb(231, 245, 180);
+    padding: 10px;
+}
+
+nav {
+    width: 400px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: blanchedalmond;
+    box-sizing: content-box; /*border-box laius kehtib kõigele kokku. content-box - css2 see laius ongi sisu, millele lisandub padding*/
+}
+
+section {
+    background-image: url("../Photos/nurk_alumine.png"), url("../Photos/nurk_alumine2.png"), url("../Photos/nurk_ylemine.png"), url("../Photos/nurk_ylemine2.png");
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: bottom left, bottom right, top right, top left;
+    width: 75%;
+    border: 5px dotted blanchedalmond;
+    background-origin: padding-box; 
+    /* sarnane eelneva teema (vt nav), siia lisandub veel ka background-clip */
+    margin-bottom: 20px;
+    /* margin: 10px 20px; vertikaalne ja horisontaalne
+    margin: 10px 20px 5px; üleval, horisontaalne, all.
+    Saab anda ka neli erinevat väärtust, st kõik eraldi ette anda */
+    min-height: 400px;
+    max-height: 800px;
+    overflow: auto;
+    /* visible, hidden, scroll (lisab scrollimise riba), auto täh seda, et kerimisriba tekib sinna, kus seda vaja on */
+
+}
+
+canvas {
+    background-color: white;
+    border: 1px solid black;
+    margin-bottom: 50px;
+}
+
+.tlu_logo {
+    float: right;
+    transform: rotate(0deg) translate(0px, 0px) scale(1.5) skew(0deg);
+    /* skew on võimalik pilti veidi välja venitada. Rotate võimaldab pilti pöörata, translate annab võimaluse pildi suurust muuta ning transform muudab suurust teatud kord (nt 0.5 korda vähendab kahe võrra) */
+    transform-origin: 100% 0%;
+    opacity: .7;
+    transition-property: all; 
+    transition-duration: 2s; 
+    transition-delay: 1s;
+    transition-timing-function: ease-out;
+    /* transition: opacity 2s 3s;  (st et eelnevat saab ka lühemalt kirja panna, aga see pole päris õige :P)*/
+    /* transition-property on võimalik panna ka "all" - siis mõjutab kõike
+    kui kaua aega võtab, siis tuleb panna transition-duration: Kui aga property on transform...; */
+}
+/* pseudoelement, nt kui hiirega liigutaks pildi peale, siis pilt muutub eriliseks. All siis nii, et kui 
+hiirega peale liikuda, siis pildi suurus muutub */
+
+.tlu_logo:hover {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.photoplace {
+    width:600px;
+    height: 425px;
+    padding: 0px;
+    position: relative; 
+    display: inline-block;
+    /* block ja inline on kaks võimalust dispay'le */
+}
+
+.bot_btn {
+    width: 100px;
+    bottom: 0px;
+}
+
+.right_btn {
+    right: 0px;
+}
+
+.fadephoto {
+    opacity: 0;
+    transition: opacity 1s;
+
+}
+
+.changephoto {
+    opacity: 0;
+    transition: opacity 1s;
+
+}
+
+#stage {
+    width:800px;
+    height: 500px;
+    background-color:blanchedalmond;    
+    /*asukoha määramiseks kasut koordinaate. Neid saab määrata nelja koordinaadi järgi ja millisest suunast on kergem (nt vasakust suunast mingi arv piksleid vmt) left right top bottom  */
+    position: relative;
+    /* static tähendab, et midagi ei muutu, jõudsi millalgi htmli ja siis nii jäi:)
+    relative liigutab objekti originaalasukohast;
+    absolute - liigutab kogu lehe suhtes, st hierarhiat ei ole ja võtab body koordinaadid
+     */
+    /* left: 100px;
+    top: 100px;  */
+    margin-bottom: 100px;
+    overflow: hidden;
+
+}
+/* kui tahame teha mingi stiilimuutuse märkega stage'le, 
+siis sinna taha tuleb tärn, st et kõigel on koordinaadid üksteise otsas */
+#stage *, .photoplace * {
+    position: absolute;
+    
+}
+
+.landscape {
+    
+    width: 50px;
+    height: 10px;
+    transform: scale(.18);
+    
+}
+
+.car {
+    width: 900px;
+    height:425px;
+    transform: scale(.05);
+    transform-origin: left top;
+    animation: drive 10s linear infinite;
+}
+
+.car_body {
+    bottom: 200px;
+    right: 0px;
+}
+
+.car_wheel {
+    bottom:150px;
+    right:40px;
+    
+}
+
+.car_wheel2 {
+    bottom:150px;
+    right:380px;
+    
+}
+
+.wheel {
+    animation: spin 1s linear infinite;
+}
+
+.windmill  {
+    width: 800px;
+    height: 360px;
+    transform: scale(.3);
+}
+
+.wnd_body {
+    bottom: 0px;
+}
+
+.wm_wing {
+    animation: spin 3s linear infinite reverse;
+}
+
+.thing {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    /* alljärgnevat on pikalt anmatsioon kirja pandud, saab ka lühemalt */
+    animation-name: moving_thing;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out; /*siin võib kasutada veel ease linear ease-in ease-out ja cubic-bezier(x,x,x,x)*/
+    animation-delay: 1s;
+    animation-iteration-count: 3; /* kui mitu korda liigub*/
+    animation-direction: alternate; /*normal alternate (vaheldumisi aga alustab teiselt poolt) reverse alternate-reverse*/
+    animation-fill-mode: both;/*kuidas animatsioon täidab oma omadusi, enne ja pärast või mõlemal juhul, 
+    forwards jääb sinna kus lõpetab, backwards (alustab sealt) või siis both (alustab ja lõpetab samas, kus liikuma hakkab*/
+}
+
+footer {
+    width: 75%;
+    text-align: center;
+    color: darkgreen;
+    background-color:rgb(250, 241, 228);
+    position: fixed;
+    bottom: 0px;
+
+    
+}
+
+.clockArea {
+	width: 272px;
+	height: 473px;
+    overflow: hidden;
+}
+
+.clock {
+	position: relative;
+	width: 554px;
+	height: 945px;
+	transform-origin: 0% 0%;
+	transform: scale(.5);
+}
+
+.clock * {
+	position: absolute;
+}
+
+.clockface {
+	width: 369px;
+	height: 369px;
+	left: 92px;
+	top: 90px;
+}
+
+.clockhand {
+	left: 158px;
+	top: 10px;
+	transform-origin: 50% 176px;
+}
+
+.clockwork {
+	animation-name: spin;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.clocksec {
+	animation-duration: .5s;
+}
+
+.clockmin {
+	animation-duration: 30s;
+}
+
+.clockhour {
+	animation-duration: 360s;
+}
+
+
+.pendulus {
+	left: 194px;
+	top: 400px;
+    transform-origin: 50% 0%;
+    animation: moove 1s ease-in-out infinite alternate;
+	
+}
+
+
+/* tund12 teema, meediatüüpe on screen, speech (loeb ette teksti nägemispuudega inimestele) */
+
+@media screen and (min-width: 1000px) {
+    /* hakkab tööle kui ekraani suurus on minimaalselt 1000px, kaks koolonit on pseudoelement */
+    h2::before {
+        content: url("http://greeny.cs.tlu.ee/~rinde/media/bullet/tlu_bullet.png") " ";
+    }
+}
+
+
+@keyframes droove {
+    0% {transform: translate(0px, 245px);}
+}
+@keyframes drive {
+    0% {transform: translate(-1000px, 50px);}
+    100% {transform: translate(480px, 150px);} 
+
+}
+/* @keyframes on uus nn reegel */
+@keyframes moving_thing {
+    0% {transform: translate(0px, 245px);}
+    50% {transform: translate(480px, 0px);} /* sellega paneme liikuma poole peal üles liikuma*/
+    100% {transform:translate(910px, 245px) scale(1,.5); background-color: red;}
+}
+
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@keyframes moove {
+    0% {transform: rotate(-30deg);}
+	100% {transform: rotate(30deg);}
+}

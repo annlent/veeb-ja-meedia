@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+	<title>Veeb- ja meediaelemendid</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../styles/style.css">
+	<script src="javascript/video11.js" defer></script>
+</head>
+<body>
+	<nav>
+		<p><a href="../tund_7/index.html">Tagasi pealehele</a></p>
+	</nav>
+	<main>
+		<header>
+			<h1>Veeb- ja meediaelemendid</h1>
+			<p>See veebileht on loodud õppetöö raames ja ei sisalda olulist või mõttekat sisu!</p>
+		</header>
+
+		<section id="video">
+			<h2>Joonistamine</h2>
+			<video id="movie" width="600">
+			<source src="../Video/IFI_reklaam_no_audio.mp4">
+            <track id="sub_en" kind="subtitles" label="Subtitles in English" srclang= "en" src="http://greeny.cs.tlu.ee/~rinde/media/videos/subtitles/subtitles_en.vtt">
+            <track id="sub_et" kind="subtitles" label="Subtiitrid Eesti keeles" srclang= "et" src="http://greeny.cs.tlu.ee/~rinde/media/videos/subtitles/subtitles_et.vtt">
+            </video>
+            <br>
+            <button type="button" id="subtitle_change_btn">Vaheta subtiitrite keelt</button>
+            <p>Subtiiter hetkel: <span id="subtitle_place"></span></p>
+            <br>
+            <h3>Filtrid</h3>
+            <label for="brightness_btn">Heledus</label>
+            <input id="brightness_btn" type="range" min="0" max="1000" value="100">
+            <br>
+            <label for="contrast_btn">Kontrast</label>
+            <input id="contrast_btn" type="range" min="0" max="1000" value="100">
+            <br>
+            <label for="saturate_btn">Värviküllastus</label>
+            <input id="saturate_btn" type="range" min="0" max="1000" value="100">
+            <br>
+            <label for="hue-rotate_btn">Värvinihe</label>
+            <input id="hue-rotate_btn" type="range" min="0" max="360" value="0">
+            <br>
+            <label for="blur_btn">Hägustamine</label>
+            <input id="blur_btn" type="range" min="0" max="20" value="0">
+        </section>
+		
+		<footer>
+			<p>Veebileht lõppeb siin!</p>
+		</footer>
+	</main>
+</body>
+</html>

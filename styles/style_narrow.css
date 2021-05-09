@@ -1,0 +1,11 @@
+body {
+    background: none;
+    background-color:  #f8fcbf;
+}
+
+section {
+    width: 95%;
+    border: 1px solid white;
+    background: none;
+    padding: 5px;
+}

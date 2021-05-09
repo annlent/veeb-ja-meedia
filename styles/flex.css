@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+}
+
+/* kui html failis on viewport, siis saate uued mõõtühikud
+vw 1%viewport laiusest
+vh 1%kõrgusest
+vmin 1% lähema serva pikkusest
+vmax 1% pikema serva pikkusest */
+
+
+body {
+    background-color: rgb(248, 234, 209);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+
+}
+
+main {
+    width: 95vw;
+}
+
+section {
+    padding: 20px;
+    border: 2px solid rgb(253, 3, 3);
+}
+
+img {
+    width: 150px;
+    float: left;
+    margin-left: 10px;
+}
+
+h2 {
+    clear:both;
+}
+
+/* flexbox */
+
+.flex_container {
+    display: flex; /*inline-flex on ka olemas*/
+    flex-direction:  row; /*row-reverse alustab viimasest v alustab paremalt, column (ülevaltalla), column-reverse (ülevalt-alla ja viimasest alustab)*/
+    flex-wrap: wrap;
+    justify-content: flex-start; /*flex-end, flex-start, center, space-between, space-around*/
+
+}
+
+.flex_item {
+    max-height: 500px;
+    overflow-y: auto;
+    flex-basis: 400px; /*elemendi baasmõõt, hetkel laius*/
+    min-width: 200px;
+    max-height: 100%;
+    flex-grow: 1; /* kasvamine ja kahanemine on lubatud. 
+    kui see võrdub 1 (võrdne väärtus), siis see täh, et kui ruumi tuleb juurde 100px siis see jagatakse ühtlaselt elementide vahel*/
+    flex-shrink: 1;
+    margin: 5px;
+
+}
+
+.wider{
+    flex-basis: 810px; /*elemendi baasmõõt, hetkel laius*/
+    min-width: 400px;
+    flex-shrink: 2;
+    flex-grow: 2;
+    
+}
